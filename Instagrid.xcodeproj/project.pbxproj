@@ -12,6 +12,8 @@
 		C2B734B0219438FB0000C1F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B734AE219438FB0000C1F6 /* Main.storyboard */; };
 		C2B734B2219438FD0000C1F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B734B1219438FD0000C1F6 /* Assets.xcassets */; };
 		C2B734B5219438FD0000C1F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B734B3219438FD0000C1F6 /* LaunchScreen.storyboard */; };
+		C2D7A0D021E746BB006C58F8 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2D7A0CE21E746BB006C58F8 /* ThirstySoftRegular.otf */; };
+		C2D7A0D121E746BB006C58F8 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2D7A0CF21E746BB006C58F8 /* Delm-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		C2B734B1219438FD0000C1F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2B734B4219438FD0000C1F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B734B6219438FD0000C1F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D7A0CE21E746BB006C58F8 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = "../../../Google Drive/OpenClassrooms/Projet 5 - Instagrid/Projet/Polices/ThirstySoftRegular.otf"; sourceTree = "<group>"; };
+		C2D7A0CF21E746BB006C58F8 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../Google Drive/OpenClassrooms/Projet 5 - Instagrid/Projet/Polices/Delm-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 				C2B734AC219438FB0000C1F6 /* ViewController.swift */,
 				C2B734AE219438FB0000C1F6 /* Main.storyboard */,
 				C2B734B1219438FD0000C1F6 /* Assets.xcassets */,
+				C2D7A0CF21E746BB006C58F8 /* Delm-Medium.otf */,
+				C2D7A0CE21E746BB006C58F8 /* ThirstySoftRegular.otf */,
 				C2B734B3219438FD0000C1F6 /* LaunchScreen.storyboard */,
 				C2B734B6219438FD0000C1F6 /* Info.plist */,
 			);
@@ -123,7 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B734B5219438FD0000C1F6 /* LaunchScreen.storyboard in Resources */,
+				C2D7A0D121E746BB006C58F8 /* Delm-Medium.otf in Resources */,
 				C2B734B2219438FD0000C1F6 /* Assets.xcassets in Resources */,
+				C2D7A0D021E746BB006C58F8 /* ThirstySoftRegular.otf in Resources */,
 				C2B734B0219438FB0000C1F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
