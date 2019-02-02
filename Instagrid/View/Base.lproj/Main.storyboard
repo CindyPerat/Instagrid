@@ -26,8 +26,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWa-tI-z4g">
-                                <rect key="frame" x="128" y="28" width="119" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWa-tI-z4g">
+                                <rect key="frame" x="37.5" y="28" width="300" height="39"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G8-mM-Wfr">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G8-mM-Wfr" userLabel="Image1 Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="127.5" height="127.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -123,7 +123,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="didTapImage1Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="KrY-wF-1qU"/>
+                                                    <action selector="touchImage1Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="rJj-vC-c3z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -196,8 +196,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="didTapImage1Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="CL3-Wb-RIZ"/>
-                                                    <action selector="didTapImage2Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="bLc-f7-liX"/>
+                                                    <action selector="touchImage2Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="EAW-3x-7ow"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -270,8 +269,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="didTapImage1Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nab-bC-ys0"/>
-                                                    <action selector="didTapImage3Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="CmO-dY-dDn"/>
+                                                    <action selector="touchImage3Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="ILa-LS-5eU"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -344,12 +342,12 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="didTapImage1Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="bDN-pS-Xv0"/>
-                                                    <action selector="didTapImage4Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="je4-r8-kqI"/>
+                                                    <action selector="touchImage4Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="LFr-xW-dpi"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="HZy-gb-oHv" firstAttribute="height" secondItem="u74-y9-Jsv" secondAttribute="height" id="7Up-rz-7vY"/>
                                             <constraint firstItem="Ho6-QK-bfp" firstAttribute="top" secondItem="u74-y9-Jsv" secondAttribute="top" id="C25-yy-VSb"/>
@@ -372,6 +370,7 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="CTF-3Q-evD" firstAttribute="leading" secondItem="H9W-y9-VJW" secondAttribute="leading" constant="15" id="0f4-G3-QsJ"/>
                                     <constraint firstItem="CTF-3Q-evD" firstAttribute="top" secondItem="H9W-y9-VJW" secondAttribute="top" constant="15" id="48K-Zj-rnb"/>
@@ -420,6 +419,7 @@
                                     <outlet property="image4ContainerTopSpace" destination="KlV-8F-Afz" id="c44-vh-MsB"/>
                                     <outlet property="image4ContainerWidth" destination="Zox-Uw-SVN" id="br4-Hk-Nsz"/>
                                     <outlet property="layoutSelection" destination="PJG-Do-V1z" id="aRe-oN-ig0"/>
+                                    <outletCollection property="gestureRecognizers" destination="dQW-8Y-8Jm" appends="YES" id="cBR-Qc-rdH"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1M-gc-QAn" userLabel="Layouts List">
@@ -462,7 +462,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
-                                                    <action selector="didTapLayout1Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="fdp-e7-MfE"/>
+                                                    <action selector="touchLayout1Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="106-5C-8kc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -525,7 +525,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
-                                                    <action selector="didTapLayout2Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="lQv-7Y-VF4"/>
+                                                    <action selector="touchLayout2Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="lc8-Ft-Pga"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -598,7 +598,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
-                                                    <action selector="didTapLayout3Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="jEh-yC-58B"/>
+                                                    <action selector="touchLayout3Button" destination="BYZ-38-t0r" eventType="touchUpInside" id="kIL-Z7-LkI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -800,9 +800,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.71764705882352942" green="0.84313725490196079" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="bnw-4N-fsF" firstAttribute="trailing" secondItem="A1M-gc-QAn" secondAttribute="trailing" constant="40" id="0gm-lJ-REy"/>
                             <constraint firstItem="bnw-4N-fsF" firstAttribute="bottom" secondItem="A1M-gc-QAn" secondAttribute="bottom" constant="30" id="0p0-Tm-s97"/>
+                            <constraint firstItem="fWa-tI-z4g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="37.5" id="1Jb-QO-M1m"/>
+                            <constraint firstAttribute="trailing" secondItem="fWa-tI-z4g" secondAttribute="trailing" constant="37.5" id="4Xa-tZ-GeA"/>
                             <constraint firstItem="A1M-gc-QAn" firstAttribute="top" secondItem="bnw-4N-fsF" secondAttribute="top" constant="60" id="6N2-qA-aug"/>
                             <constraint firstItem="fWa-tI-z4g" firstAttribute="top" secondItem="bnw-4N-fsF" secondAttribute="top" constant="8" id="6k8-yD-5MZ">
                                 <variation key="heightClass=compact" constant="10"/>
@@ -821,7 +824,6 @@
                             <constraint firstItem="H9W-y9-VJW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hXG-hr-J7A"/>
                             <constraint firstItem="A1M-gc-QAn" firstAttribute="leading" secondItem="H9W-y9-VJW" secondAttribute="trailing" constant="40" id="kGG-V1-Uel"/>
                             <constraint firstItem="mg3-oi-rqW" firstAttribute="leading" secondItem="bnw-4N-fsF" secondAttribute="leading" constant="10" id="m6v-ZJ-4IP"/>
-                            <constraint firstItem="fWa-tI-z4g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q9O-ds-pdJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bnw-4N-fsF"/>
                         <variation key="default">
@@ -846,7 +848,6 @@
                                 <exclude reference="VaE-PB-Ffa"/>
                                 <include reference="m6v-ZJ-4IP"/>
                                 <include reference="cuu-kH-GMW"/>
-                                <exclude reference="q9O-ds-pdJ"/>
                                 <exclude reference="BtY-Mb-flz"/>
                                 <include reference="LcJ-EW-UXV"/>
                                 <include reference="Xoi-fD-WL2"/>
@@ -870,9 +871,15 @@
                         <outlet property="layout2Button" destination="D4y-Q6-Tsw" id="dO7-6G-uEE"/>
                         <outlet property="layout3Button" destination="0fZ-Ke-smh" id="qWA-Bg-4s0"/>
                         <outlet property="mainLayout" destination="H9W-y9-VJW" id="g0Z-jv-4r5"/>
+                        <outlet property="shareIndicationLabel" destination="b0y-yR-YHa" id="rKK-wB-Wyw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="dQW-8Y-8Jm">
+                    <connections>
+                        <action selector="swipeMainLayout:" destination="BYZ-38-t0r" id="WK6-CN-4tY"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
