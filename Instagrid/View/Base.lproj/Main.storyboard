@@ -26,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWa-tI-z4g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uD8-aw-8rV">
                                 <rect key="frame" x="37.5" y="28" width="300" height="39"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -804,33 +804,29 @@
                         <constraints>
                             <constraint firstItem="bnw-4N-fsF" firstAttribute="trailing" secondItem="A1M-gc-QAn" secondAttribute="trailing" constant="40" id="0gm-lJ-REy"/>
                             <constraint firstItem="bnw-4N-fsF" firstAttribute="bottom" secondItem="A1M-gc-QAn" secondAttribute="bottom" constant="30" id="0p0-Tm-s97"/>
-                            <constraint firstItem="fWa-tI-z4g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="37.5" id="1Jb-QO-M1m"/>
-                            <constraint firstAttribute="trailing" secondItem="fWa-tI-z4g" secondAttribute="trailing" constant="37.5" id="4Xa-tZ-GeA"/>
                             <constraint firstItem="A1M-gc-QAn" firstAttribute="top" secondItem="bnw-4N-fsF" secondAttribute="top" constant="60" id="6N2-qA-aug"/>
-                            <constraint firstItem="fWa-tI-z4g" firstAttribute="top" secondItem="bnw-4N-fsF" secondAttribute="top" constant="8" id="6k8-yD-5MZ">
-                                <variation key="heightClass=compact" constant="10"/>
-                            </constraint>
+                            <constraint firstItem="uD8-aw-8rV" firstAttribute="top" secondItem="bnw-4N-fsF" secondAttribute="top" constant="8" id="B60-kp-faC"/>
                             <constraint firstItem="H9W-y9-VJW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BtY-Mb-flz"/>
-                            <constraint firstItem="mg3-oi-rqW" firstAttribute="top" secondItem="fWa-tI-z4g" secondAttribute="bottom" constant="10" id="HgY-HO-iiS"/>
                             <constraint firstItem="H9W-y9-VJW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LcJ-EW-UXV"/>
+                            <constraint firstItem="mg3-oi-rqW" firstAttribute="top" secondItem="uD8-aw-8rV" secondAttribute="bottom" constant="10" id="Pdj-eG-S5d"/>
                             <constraint firstItem="mg3-oi-rqW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VaE-PB-Ffa"/>
+                            <constraint firstItem="bnw-4N-fsF" firstAttribute="trailing" secondItem="uD8-aw-8rV" secondAttribute="trailing" constant="37.5" id="WSW-Cb-Uwx"/>
                             <constraint firstItem="H9W-y9-VJW" firstAttribute="top" secondItem="bnw-4N-fsF" secondAttribute="top" constant="60" id="Xoi-fD-WL2"/>
                             <constraint firstItem="H9W-y9-VJW" firstAttribute="top" secondItem="mg3-oi-rqW" secondAttribute="bottom" constant="10" id="Y8E-8B-3Py"/>
                             <constraint firstItem="H9W-y9-VJW" firstAttribute="leading" secondItem="mg3-oi-rqW" secondAttribute="trailing" constant="10" id="a64-K3-rQW"/>
-                            <constraint firstItem="fWa-tI-z4g" firstAttribute="centerX" secondItem="H9W-y9-VJW" secondAttribute="centerX" id="cuu-kH-GMW"/>
                             <constraint firstItem="A1M-gc-QAn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ehD-WV-XTp"/>
                             <constraint firstItem="H9W-y9-VJW" firstAttribute="top" secondItem="mg3-oi-rqW" secondAttribute="top" id="g0B-Fm-9Uw"/>
                             <constraint firstItem="A1M-gc-QAn" firstAttribute="centerY" secondItem="H9W-y9-VJW" secondAttribute="centerY" id="geu-RD-pfO"/>
                             <constraint firstItem="H9W-y9-VJW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hXG-hr-J7A"/>
                             <constraint firstItem="A1M-gc-QAn" firstAttribute="leading" secondItem="H9W-y9-VJW" secondAttribute="trailing" constant="40" id="kGG-V1-Uel"/>
                             <constraint firstItem="mg3-oi-rqW" firstAttribute="leading" secondItem="bnw-4N-fsF" secondAttribute="leading" constant="10" id="m6v-ZJ-4IP"/>
+                            <constraint firstItem="uD8-aw-8rV" firstAttribute="leading" secondItem="bnw-4N-fsF" secondAttribute="leading" constant="37.5" id="xbo-TO-uAr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bnw-4N-fsF"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="0gm-lJ-REy"/>
                                 <exclude reference="m6v-ZJ-4IP"/>
-                                <exclude reference="cuu-kH-GMW"/>
                                 <exclude reference="LcJ-EW-UXV"/>
                                 <exclude reference="Xoi-fD-WL2"/>
                                 <exclude reference="a64-K3-rQW"/>
@@ -844,10 +840,8 @@
                             <mask key="constraints">
                                 <include reference="0gm-lJ-REy"/>
                                 <exclude reference="0p0-Tm-s97"/>
-                                <exclude reference="HgY-HO-iiS"/>
                                 <exclude reference="VaE-PB-Ffa"/>
                                 <include reference="m6v-ZJ-4IP"/>
-                                <include reference="cuu-kH-GMW"/>
                                 <exclude reference="BtY-Mb-flz"/>
                                 <include reference="LcJ-EW-UXV"/>
                                 <include reference="Xoi-fD-WL2"/>
