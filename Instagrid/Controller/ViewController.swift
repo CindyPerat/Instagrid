@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var mainLayout: LayoutView!
+    var selectedLayout: Layout = .layout2
     
     @IBOutlet weak var shareIndicationLabel: UILabel!
     
@@ -25,13 +26,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainLayout.layout = .layout2
+        mainLayout.layout = selectedLayout
         changeLabelAccordingToOrientation(label: shareIndicationLabel)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         changeLabelAccordingToOrientation(label: shareIndicationLabel)
+        
+        coordinator.animate(alongsideTransition: nil, completion: { _ in
+            self.mainLayout.layout = self.selectedLayout
+        })
     }
     
     private func changeLabelAccordingToOrientation(label: UILabel) {
@@ -75,15 +80,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func touchLayout1Button() {
-        mainLayout.layout = .layout1
+        selectedLayout = .layout1
+        mainLayout.layout = selectedLayout
     }
     
     @IBAction func touchLayout2Button() {
-        mainLayout.layout = .layout2
+        selectedLayout = .layout2
+        mainLayout.layout = selectedLayout
     }
     
     @IBAction func touchLayout3Button() {
-        mainLayout.layout = .layout3
+        selectedLayout = .layout3
+        mainLayout.layout = selectedLayout
     }
     
     @IBAction func swipeMainLayout(_ sender: UIPanGestureRecognizer) {

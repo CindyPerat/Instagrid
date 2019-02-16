@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C20F755821F5D7930009288D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20F755721F5D7930009288D /* UIView+Extension.swift */; };
+		C25754FA2217043C0084B398 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25754F92217043C0084B398 /* Layout.swift */; };
 		C2671CF521F5D228002E401F /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2671CF321F5D228002E401F /* Delm-Medium.otf */; };
 		C2671CF621F5D228002E401F /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C2671CF421F5D228002E401F /* ThirstySoftRegular.otf */; };
 		C29C65F32201F7650056EFB8 /* LayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29C65F22201F7650056EFB8 /* LayoutView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		C20F755721F5D7930009288D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C25754F92217043C0084B398 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		C2671CF321F5D228002E401F /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		C2671CF421F5D228002E401F /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		C29C65F22201F7650056EFB8 /* LayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C25754F8221704280084B398 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C25754F92217043C0084B398 /* Layout.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C2671CE521F5CDA2002E401F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +100,7 @@
 		C2B734A9219438FB0000C1F6 /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				C25754F8221704280084B398 /* Model */,
 				C2671CF221F5D1D0002E401F /* Resources */,
 				C2671CE621F5CDDA002E401F /* View */,
 				C2671CE521F5CDA2002E401F /* Controller */,
@@ -175,6 +186,7 @@
 			files = (
 				C29C65F32201F7650056EFB8 /* LayoutView.swift in Sources */,
 				C20F755821F5D7930009288D /* UIView+Extension.swift in Sources */,
+				C25754FA2217043C0084B398 /* Layout.swift in Sources */,
 				C2B734AD219438FB0000C1F6 /* ViewController.swift in Sources */,
 				C2B734AB219438FB0000C1F6 /* AppDelegate.swift in Sources */,
 			);

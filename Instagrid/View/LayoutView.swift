@@ -15,12 +15,19 @@ class LayoutView: UIView {
     @IBOutlet private var image4Container: UIView!
     
     @IBOutlet private var layoutSelection: UIView!
-        
-    enum Layout {
-        case layout1, layout2, layout3
-    }
     
-    var layout: Layout = .layout1 {
+    // For portrait device
+    @IBOutlet private var layoutSelectionLeadingPosition: NSLayoutConstraint!
+    
+    // For landscape device
+    @IBOutlet private var layoutSelectionTopPosition: NSLayoutConstraint!
+    
+    @IBOutlet private var layoutsList: UIStackView!
+    @IBOutlet private var layout1Selection: UIView!
+    @IBOutlet private var layout2Selection: UIView!
+    @IBOutlet private var layout3Selection: UIView!
+    
+    var layout: Layout = .layout2 {
         didSet {
             setLayout(layout)
         }
@@ -34,21 +41,33 @@ class LayoutView: UIView {
             image3Container.isHidden = false
             image4Container.isHidden = false
             
-            layoutSelection.frame.origin.x = 0
+            if UIDevice.current.orientation.isLandscape {
+                layoutSelectionTopPosition.constant = layout1Selection.frame.origin.y
+            } else {
+                layoutSelectionLeadingPosition.constant = layout1Selection.frame.origin.x
+            }
         case .layout2:
             image1Container.isHidden = false
             image2Container.isHidden = false
             image3Container.isHidden = false
             image4Container.isHidden = true
             
-            layoutSelection.frame.origin.x = 100
+            if UIDevice.current.orientation.isLandscape {
+                layoutSelectionTopPosition.constant = layout2Selection.frame.origin.y
+            } else {
+                layoutSelectionLeadingPosition.constant = layout2Selection.frame.origin.x
+            }
         case .layout3:
             image1Container.isHidden = false
             image2Container.isHidden = false
             image3Container.isHidden = false
             image4Container.isHidden = false
             
-            layoutSelection.frame.origin.x = 200
+            if UIDevice.current.orientation.isLandscape {
+                layoutSelectionTopPosition.constant = layout3Selection.frame.origin.y
+            } else {
+                layoutSelectionLeadingPosition.constant = layout3Selection.frame.origin.x
+            }
         }
     }
 }
