@@ -18,6 +18,10 @@ class LayoutView: UIView {
     @IBOutlet private var layout2Selection: UIView!
     @IBOutlet private var layout3Selection: UIView!
     
+    enum Layout {
+        case layout1, layout2, layout3
+    }
+    
     var layout: Layout = .layout2 {
         didSet {
             setLayout(layout)
