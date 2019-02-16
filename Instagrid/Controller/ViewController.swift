@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var mainLayout: LayoutView!
-    var selectedLayout: Layout = .layout2
-    
     @IBOutlet weak var shareIndicationLabel: UILabel!
+    
+    enum shareIndicationText: String {
+        case up = "Swipe up to share"
+        case left = "Swipe left to share"
+    }
     
     @IBOutlet weak var image1View: UIImageView!
     @IBOutlet weak var image2View: UIImageView!
@@ -23,27 +26,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var layout1Button: UIButton!
     @IBOutlet weak var layout2Button: UIButton!
     @IBOutlet weak var layout3Button: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainLayout.layout = selectedLayout
-        changeLabelAccordingToOrientation(label: shareIndicationLabel)
+        mainLayout.layout = .layout2
+        changeShareIndicationLabelAtLaunch(label: shareIndicationLabel)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        changeLabelAccordingToOrientation(label: shareIndicationLabel)
-        
-        coordinator.animate(alongsideTransition: nil, completion: { _ in
-            self.mainLayout.layout = self.selectedLayout
-        })
+        changeShareIndicationLabelWhenTransition(label: shareIndicationLabel)
     }
     
-    private func changeLabelAccordingToOrientation(label: UILabel) {
+    // Modify share indication label at application launch
+    private func changeShareIndicationLabelAtLaunch(label: UILabel) {
+        if UIApplication.shared.statusBarOrientation == .landscapeLeft ||
+            UIApplication.shared.statusBarOrientation == .landscapeRight {
+            shareIndicationLabel.text = shareIndicationText.left.rawValue
+        } else if UIApplication.shared.statusBarOrientation == .portrait ||
+            UIApplication.shared.statusBarOrientation == .portraitUpsideDown {
+            shareIndicationLabel.text = shareIndicationText.up.rawValue
+        }
+    }
+    
+    // Modify share indication label when device orientation change
+    private func changeShareIndicationLabelWhenTransition(label: UILabel) {
         if UIDevice.current.orientation.isLandscape {
-            shareIndicationLabel.text = "Swipe left to share"
+            shareIndicationLabel.text = shareIndicationText.left.rawValue
         } else {
-            shareIndicationLabel.text = "Swipe up to share"
+            shareIndicationLabel.text = shareIndicationText.up.rawValue
         }
     }
     
@@ -71,33 +82,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
+        imagePicker.modalPresentationStyle = .overCurrentContext
         present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        selectedImageView.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImageView.image = pickedImage
+        }
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func touchLayout1Button() {
-        selectedLayout = .layout1
-        mainLayout.layout = selectedLayout
+        mainLayout.layout = .layout1
     }
     
     @IBAction func touchLayout2Button() {
-        selectedLayout = .layout2
-        mainLayout.layout = selectedLayout
+        mainLayout.layout = .layout2
     }
     
     @IBAction func touchLayout3Button() {
-        selectedLayout = .layout3
-        mainLayout.layout = selectedLayout
+        mainLayout.layout = .layout3
     }
     
     @IBAction func swipeMainLayout(_ sender: UIPanGestureRecognizer) {        
-        if (selectedLayout == .layout1 && image1View.image != nil && image3View.image != nil && image4View.image != nil) ||
-            (selectedLayout == .layout2 && image1View.image != nil && image2View.image != nil && image3View.image != nil) ||
-            (selectedLayout == .layout3 && image1View.image != nil && image2View.image != nil && image3View.image != nil && image4View.image != nil) {
+        if (mainLayout.layout == .layout1 && image1View.image != nil && image3View.image != nil && image4View.image != nil) ||
+            (mainLayout.layout == .layout2 && image1View.image != nil && image2View.image != nil && image3View.image != nil) ||
+            (mainLayout.layout == .layout3 && image1View.image != nil && image2View.image != nil && image3View.image != nil && image4View.image != nil) {
             let direction = sender.velocity(in: mainLayout)
             
             if UIDevice.current.orientation.isLandscape {
