@@ -94,31 +94,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         mainLayout.layout = selectedLayout
     }
     
-    @IBAction func swipeMainLayout(_ sender: UIPanGestureRecognizer) {
-        // Exécuter le switch que si toutes les photos du layout ont été importées
-        
-        let direction = sender.velocity(in: mainLayout)
-        
-        if UIDevice.current.orientation.isLandscape {
-            if direction.x < 0 {
-                switch sender.state {
-                case .began, .changed:
-                    moveViewHorizontally(gesture: sender, view: mainLayout)
-                case .ended, .cancelled:
-                    swipeLeftFromViewPosition(view: mainLayout)
-                default:
-                    break
+    @IBAction func swipeMainLayout(_ sender: UIPanGestureRecognizer) {        
+        if (selectedLayout == .layout1 && image1View.image != nil && image3View.image != nil && image4View.image != nil) ||
+            (selectedLayout == .layout2 && image1View.image != nil && image2View.image != nil && image3View.image != nil) ||
+            (selectedLayout == .layout3 && image1View.image != nil && image2View.image != nil && image3View.image != nil && image4View.image != nil) {
+            let direction = sender.velocity(in: mainLayout)
+            
+            if UIDevice.current.orientation.isLandscape {
+                if direction.x < 0 {
+                    switch sender.state {
+                    case .began, .changed:
+                        moveViewHorizontally(gesture: sender, view: mainLayout)
+                    case .ended, .cancelled:
+                        swipeLeftFromViewPosition(view: mainLayout)
+                    default:
+                        break
+                    }
                 }
-            }
-        } else {
-            if direction.y < 0 {
-                switch sender.state {
-                case .began, .changed:
-                    moveViewVertically(gesture: sender, view: mainLayout)
-                case .ended, .cancelled:
-                    swipeUpFromViewPosition(view: mainLayout)
-                default:
-                    break
+            } else {
+                if direction.y < 0 {
+                    switch sender.state {
+                    case .began, .changed:
+                        moveViewVertically(gesture: sender, view: mainLayout)
+                    case .ended, .cancelled:
+                        swipeUpFromViewPosition(view: mainLayout)
+                    default:
+                        break
+                    }
                 }
             }
         }
