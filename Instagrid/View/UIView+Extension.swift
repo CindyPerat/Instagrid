@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    
+    // Display field to modify the selected view's corners radius
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
@@ -19,6 +19,7 @@ extension UIView {
         }
     }
     
+    // Display field to modify the selected view's borders width
     @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
@@ -28,6 +29,7 @@ extension UIView {
         }
     }
     
+    // Display field to modify the selected view's borders color
     @IBInspectable var borderColor: UIColor? {
         get {
             if let color = layer.borderColor {
@@ -44,6 +46,7 @@ extension UIView {
         }
     }
     
+    // Display field to modify the selected view's shadow radius
     @IBInspectable var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
@@ -53,6 +56,7 @@ extension UIView {
         }
     }
     
+    // Display field to modify the selected view's shadow opacity
     @IBInspectable var shadowOpacity: Float {
         get {
             return layer.shadowOpacity
@@ -62,6 +66,7 @@ extension UIView {
         }
     }
     
+    // Display field to modify the selected view's shadow offset
     @IBInspectable var shadowOffset: CGSize {
         get {
             return layer.shadowOffset
@@ -71,6 +76,7 @@ extension UIView {
         }
     }
     
+    // Display field to modify the selected view's shadow color
     @IBInspectable var shadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {

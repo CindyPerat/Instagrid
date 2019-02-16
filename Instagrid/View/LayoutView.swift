@@ -9,6 +9,8 @@
 import UIKit
 
 class LayoutView: UIView {
+    // MARK: - Outlets
+    
     @IBOutlet private var image1Container: UIView!
     @IBOutlet private var image2Container: UIView!
     @IBOutlet private var image3Container: UIView!
@@ -17,6 +19,8 @@ class LayoutView: UIView {
     @IBOutlet private var layout1Selection: UIView!
     @IBOutlet private var layout2Selection: UIView!
     @IBOutlet private var layout3Selection: UIView!
+    
+    // MARK: - Properties
     
     enum Layout {
         case layout1, layout2, layout3
@@ -28,6 +32,9 @@ class LayoutView: UIView {
         }
     }
     
+    // MARK: - Methods
+    
+    // Handle the images display according to selected layout
     private func setLayout(_ layout: Layout) {
         switch layout {
         case .layout1:
